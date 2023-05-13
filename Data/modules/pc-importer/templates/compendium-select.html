@@ -1,0 +1,17 @@
+<form>
+    <div class="sidebar-tab compendium flexcol select-list">
+        <label for="select-compendiums">{{localize "PCI.Compendia.SubMenu.NAME"}}{{itemType}}</label>
+        <select id="select-compendiums" label="Compendiums" class="compendium-list flexrow {{../cssClass}}" multiple size={{listLength}}>
+            {{#each compendiums}}
+                <option class="compendium-name entry-name" data-entry-id="{{this.compendium.collection}}" value={{this.compendium.collection}}>[{{this.compendium.collection}}] {{this.compendium.metadata.label}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="text-field">
+        <label for="selected-compendiums">{{localize "PCI.Compendia.CurrentValues.HINT"}} {{default}})</label>
+        <input id="selected-compendiums" type="text" name="selected-compendiums" value={{selectedCompendiums}}>
+    </div>
+    <button type="submit" name="submit">
+        <i class="far fa-save"></i> {{localize "PCI.Compendia.SubMenu.SUBMIT"}}
+    </button>
+</form>

@@ -1,0 +1,32 @@
+{
+    "name": "generated-module-1682885310210",
+    "title": "Generated Module #1682885310210",
+    "description": "A module containing the exported Generated Module #1682885310210 compendium.",
+    "version": "1.0.0",
+    "library": "false",
+    "manifestPlusVersion": "1.0.0",
+    "compatibility": {
+        "minimum": 10,
+        "verified": 10,
+        "maximum": 11
+    },
+    "authors": [
+        {
+            "name": "Gamemaster",
+            "email": "",
+            "url": ""
+        }
+    ],
+    "packs": [
+        {
+            "type": "Item",
+            "label": "Mideater's Compendium",
+            "module": "generated-module-1682885310210",
+            "path": "packs/drowned-world-mideaters-compendium-1682885310210.db",
+            "name": "drowned-world-mideaters-compendium-1682885310210",
+            "system": "dnd5e"
+        }
+    ],
+    "manifest": "",
+    "download": ""
+}

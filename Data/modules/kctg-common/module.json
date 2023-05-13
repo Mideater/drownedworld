@@ -1,0 +1,66 @@
+{
+  "id": "kctg-common",
+  "title": "Kris's Compendium of Trade Goods",
+  "description": "<i>A comprehensive database of trade goods aimed at enhancing worldbuilding efforts by facilitating the distribution of resources and bringing depth to various regions, while also catering to political interests</i><br /><br /> *** Support me on <a href=\"https://patreon.com/KCTG\" title=\"PATREON\">Patreon</a> or join me on <a href=\"https://discord.gg/MYgCWdAc9c\" title=\"Discord\">Discord</a> ***<p></p>",
+  "version": "0.12",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10.291",
+    "maximum": "11"
+  },
+  "authors": [
+    {
+      "name": "kristkos",
+      "url": "https://github.com/kristkos/kctg-common",
+      "discord": "https://discord.gg/MYgCWdAc9c",
+      "flags": {}
+    }
+  ],
+  "scripts": [
+    "scripts/kctg-welcome.js"
+  ],
+  "media": [
+    {
+      "type": "cover",
+      "loop": false,
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "Common",
+      "label": "Kris's Compendium of Trade Goods - Common",
+      "path": "packs/kriss-compendium-of-trade-goods-common.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "Common",
+      "label": "Kris's Compendium of Trade Goods - Common",
+      "path": "packs/kriss-compendium-of-trade-goods-common-materials.db",
+      "system": "pf2e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      },
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "url": "https://www.patreon.com/KCTG",
+  "manifest": "https://github.com/kristkos/kctg-common/releases/download/0.12/module.json",
+  "download": "https://github.com/kristkos/kctg-common/releases/download/0.12/kctg-common.zip"
+}

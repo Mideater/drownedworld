@@ -1,0 +1,93 @@
+{
+  "id": "RRItemsTranslationTCE",
+  "title": "RRItemsTranslationTCE",
+  "description": "Данный модуль представляет из себя набор компендиумов с переведенными классами, классовыми и расовыми способностями, чертами и предметами<br /> из основных книг по D&amp;D 5e (PHB, XGE, SCG и другие).<br /><br />Огромная благодарность пользователям: Лать, ELFA, Vita, Енисей, zubanzub, Salamander, Riverander, Gecko за помощь в составлении этого модуля.",
+  "version": "1.2.11",
+  "compatibility": {
+    "minimum": "9",
+    "verified": "10"
+  },
+  "packs": [
+    {
+      "name": "cherty-ru",
+      "label": "Черты (RU)",
+      "path": "packs/cherty-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "klassovye-sposobnosti-ru",
+      "label": "Классовые Способности (RU)",
+      "path": "packs/klassovye-sposobnosti-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "klassy-personazhej-ru",
+      "label": "Классы Персонажей (RU)",
+      "path": "packs/klassy-personazhej-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "predmety-ru",
+      "label": "Предметы (RU)",
+      "path": "packs/predmety-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "umeniya-predystorij-ru",
+      "label": "Умения Предысторий (RU)",
+      "path": "packs/umeniya-predystorij-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "zaklinaniya-ru",
+      "label": "Заклинания (RU)",
+      "path": "packs/zaklinaniya-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "vragi",
+      "label": "Враги Собственные (RU)",
+      "path": "packs/vragi.db",
+      "system": "dnd5e",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "rasovye-sposobnosti-ru",
+      "label": "Расовые Способности (RU)",
+      "path": "packs/rasovye-sposobnosti-ru.db",
+      "system": "dnd5e",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    }
+  ],
+  "relationships": [],
+  "manifest": "https://www.dropbox.com/s/nfcp87pea8iiu53/module.json?dl=1",
+  "download": "https://www.dropbox.com/s/tf4e9w4bg9gv3eo/RRItemsTranslationTCE.zip?dl=1",
+  "authors": [
+    {
+      "name": "RandomRules",
+      "flags": {}
+    }
+  ]
+}

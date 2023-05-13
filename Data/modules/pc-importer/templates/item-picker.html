@@ -1,0 +1,29 @@
+<div class="compendium directory flexcol">
+    <!-- We use the same css as for Compendium lists (modeled on compendium.html)-->
+    <header class="directory-header flexcol">
+        <div class="select-list">
+            <label for="list-type">{{localize "PCI.SelectList.ShowCandidate.LABEL"}}</label>
+            <select id="list-type" label="list-type">
+                {{#each listTypes}}
+                <option class="compendium-name entry-name" data-entry-id="{{this.type}}" value={{this.type}}
+                    {{#if this.isSelected}}selected{{/if}}>
+                    {{this.type}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="header-search flexrow">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" value="" placeholder="Suggested search: {{defaultSearch}}"
+                autocomplete="off" />
+        </div>
+    </header>
+    <ol class="directory-list item-list">
+        {{#each index}}
+        <li class="directory-item document flexrow {{../cssClass}}" data-document-id="{{this._id}}">
+            <img data-src="{{this.img}}" title="{{this.name}}" />
+            <h4 class="document-name entry-name"><a>{{this.name}}</a></h4>
+        </li>
+        {{/each}}
+    </ol>
+</div>

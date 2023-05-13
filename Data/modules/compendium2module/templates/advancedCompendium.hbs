@@ -1,0 +1,54 @@
+<div class="advancedCompendiumEditor compendium2moduleDialog">
+    <p>{{localize "compendium2module.advanced.description"}}</p>
+    <hr>
+    <form>
+        <div class="compendiumList">
+            <table>
+                <thead>
+                <tr>
+                    <th>{{localize "compendium2module.advanced.template.type"}}</th>
+                    <th>{{localize "compendium2module.advanced.template.source"}}</th>
+                    <th>{{localize "compendium2module.advanced.template.name"}}</th>
+                    <th>{{localize "compendium2module.advanced.template.export"}} (<a id="toggleAllCompendiums">{{localize "compendium2module.advanced.template.toggleAll"}}</a>)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each this.packs}}
+                    <tr>
+                        <td>{{this.type}}</td>
+                        <td>{{this.packageName}}</td>
+                        <td>{{this.label}}</td>
+                        <td><input type="checkbox" name="compendium|{{this.packageName}}|{{this.name}}"></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="inputs">
+            <label for="id">{{localize "compendium2module.edit.fields.id"}}:</label>
+            <input id="id" name="id" type="text" placeholder="generated-compendium-<timestamp>">
+            <label for="displayName">{{localize "compendium2module.edit.fields.displayName"}}:</label>
+            <input id="displayName" name="displayName" type="text" placeholder="{{this.label}}">
+            <label for="author">{{localize "compendium2module.edit.fields.author"}}:</label>
+            <input id="author" name="author" type="text" placeholder="{{this.user}}">
+            <label for="version">{{localize "compendium2module.edit.fields.version"}}:</label>
+            <input id="version" name="version" type="text" placeholder="{{this.version}}">
+            <label for="includeImages">{{localize "compendium2module.edit.fields.includeImages"}}:</label>
+            <input id="includeImages" name="includeImages" type="checkbox">
+            <label for="saveToFile">{{localize "compendium2module.edit.fields.saveToFile"}}:</label>
+            <input id="saveToFile" name="saveToFile" type="checkbox">
+        </div>
+        <hr>
+        <div class="buttons">
+            <button id="cancel" type="button"><i class="fas fa-ban"></i>{{localize "compendium2module.edit.cancel"}}</button>
+            <button id="generate" type="submit"><i class="fas fa-check"></i>{{localize "compendium2module.edit.submit"}}</button>
+        </div>
+        <hr>
+        <div class="manifest">
+            <label for="manifestLink">Manifest link:</label>
+            <input id="manifestLink" name="manifestLink" class="manifestLink disabled" type="text" disabled>
+            <button type="button" class="copyToClipboard"><i class="fas fa-copy"></i>Copy</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+{
+  "title": "Display Mode",
+  "description": "Hide all those pesky display elements you don't need for table gaming. Toggle visibility by clicking the Anvil in the topright corner",
+  "version": "0.5",
+  "scripts": [
+    "displaymode.js"
+  ],
+  "url": "https://github.com/syl3r86/displaymode",
+  "manifest": "https://raw.githubusercontent.com/syl3r86/displaymode/master/module.json",
+  "download": "https://github.com/syl3r86/displaymode/archive/master.zip",
+  "id": "displaymode",
+  "authors": [
+    {
+      "name": "Felix#6196",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "0.5.5",
+    "verified": "0.6.1"
+  }
+}

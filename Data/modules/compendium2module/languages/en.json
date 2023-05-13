@@ -1,0 +1,52 @@
+{
+    "compendium2module": {
+        "assets": {
+            "notFound": "File <filename> does not exist.",
+            "start": "Loading assets.",
+            "finish": "Finished loading assets."
+        },
+        "button": "Compendium 2 Module",
+        "data": {
+            "generatedId": "generated-module-<timestamp>",
+            "generatedName": "Generated Module #<timestamp>"
+        },
+        "download": "Save as module",
+        "edit": {
+            "title": "Compendium 2 Module: Simple Export",
+            "description": "Here you can modify the different aspects of the compendium module, like the id, display name or author. If no change is made, the default values will be used.",
+            "fields": {
+                "id": "Module ID",
+                "displayName": "Display Name",
+                "author": "Author",
+                "version": "Version",
+                "includeImages": "Include Images",
+                "saveToFile": "Generate manifest link"
+            },
+            "cancel": "Cancel",
+            "close": "Close",
+            "submit": "Generate Module"
+        },
+        "errors": {
+            "id": "The Module ID must only contain lowercase letters, numbers, dashes and underscores.",
+            "compendiums": "You must select at least one compendium."
+        },
+        "advanced": {
+            "title": "Compendium 2 Module: Advanced Export",
+            "description": "Here you can choose which compendiums to include in the exported module and adjust its settings. Tick the checkbox next to a compendium to include it in the export.",
+            "template": {
+                "type": "Type",
+                "source": "Source",
+                "name": "Name",
+                "export": "Export",
+                "toggleAll": "Toggle All"
+            }
+        },
+        "json": {
+            "description": "A module containing the exported <displayName> compendium."
+        },
+        "info": {
+            "dataCollected": "Collected the required compendium data.",
+            "moduleFinished": "Finished generating the module!"
+        }
+    }
+}

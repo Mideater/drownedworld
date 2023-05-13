@@ -1,0 +1,126 @@
+{{!-- Spellbook Header --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-header.html"}}
+
+<div class="grid-layout">
+  <ul class="inventory-list spellbook-list items-list">
+    {{#each spellbook as |section|}}
+    <li class="items-header spellbook-header">
+      <div class="spell-level-slots">
+        <h3>{{section.label}}</h3>
+
+        {{#if section.usesSlots}}
+        <div class="spell-detail spell-slots">
+          <input type="text" name="system.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
+          data-dtype="Number"/>
+          <span class="sep"> / </span>
+          <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
+            {{{section.slots}}}
+            {{#if ../editable}}
+            <a class="slot-max-override" title="{{localize 'DND5E.SpellProgOverride'}}">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+            {{/if}}
+          </span>
+        </div>
+        {{/if}}
+
+      </div>
+    </li>
+
+    <ul class="item-list">
+      {{#each section.spells as |item i|}}
+      {{#with (lookup @root.itemContext item.id) as |ctx|}}
+        <li class="item {{~#if section.canPrepare}} preparable{{/if}} {{~#if item.system.preparation.prepared}} prepared{{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item.id}}">
+
+          {{#if item.flags.tidy5e-sheet.favorite}}
+          <i class="fas fa-bookmark icon-fav" title="{{localize 'TIDY5E.isFav'}}"></i>
+          {{/if}}
+
+          {{#if @root.owner}}
+          <a class="item-control item-edit" style="display:none" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+            <i class="fas fa-edit fa-fw"></i>
+          </a>
+          {{/if}}	
+
+          <div class="item-name rollable">
+            <div class="item-image" style="background-image: url({{item.img}})">
+              <i class="fa fa-dice-d20"></i>
+            </div>
+          </div>
+
+          {{#if item.system.uses.per }}
+          <div class="item-stats">
+            <div class="item-detail item-charges" title="{{localize 'DND5E.Charges'}}: {{item.system.uses.value}}/{{item.system.uses.max}} ">
+              {{#if item.hasUses }}
+              <i class="fas fa-bolt"></i><input type="text" name="system.uses.value" value="{{item.system.uses.value}}" placeholder="0" maxlength="2" >
+              {{/if}}
+            </div>
+          </div>
+          {{/if}}
+
+          <div class="info-card {{~#if item.system.preparation.prepared}} equipped {{/if}} {{#if (eq item.system.preparation.mode 'always')}} alwaysprepared{{/if}} {{#if (eq item.system.preparation.mode 'pact')}} pact{{/if}} {{#if (eq item.system.preparation.mode 'atwill')}} atwill{{/if}} {{#if (eq item.system.preparation.mode 'innate')}} innate{{/if}}" data-item-id="{{item._id}}">
+            <p class="info-card-name">{{item.name}}</p>
+            <div class="info-card-states">
+              <span>{{labels.school}}</span>
+              <!-- 
+              <span>
+                <i class="fas fa-hat-wizard"></i>
+                <b>{{localize 'DND5E.SpellSchool'}}:</b> {{item.labels.school}}
+              </span> 
+              -->
+              {{#if @root.owner}}
+              {{#if section.canPrepare}}
+                <span>{{ctx.toggleTitle}}</span>
+              {{/if}}
+              {{/if}}
+            </div>
+            <div class="info-card-amount">
+              {{#if item.hasUses }}
+              <span><i class="fas fa-bolt"></i><b>{{localize 'DND5E.Charges'}}:</b> {{item.system.uses.value}}/{{item.system.uses.max}}</span>
+              {{/if}}
+            </div>
+            <div class="description-wrap">
+              <div class="info-card-description">
+                <!-- item description -->
+              </div>
+            </div>
+            <article class="mod-roll-buttons"></article>
+          </div>
+        </li>
+      {{/with}}
+      {{/each}}
+
+      {{#if section.canCreate}}
+      <li class="items-footer">
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i>
+        </a>
+        {{else}}
+        <!-- add button for all spell categories -->
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+          <i class="fas fa-plus-circle"></i>
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+    {{else}}
+    {{#if owner}}
+    {{#if filters.spellbook.size}}
+    <li class="notice">{{localize 'DND5E.FilterNoSpells'}}</li>
+    {{else}}
+
+    <ul class="item-list">
+      <li class="notice">{{localize 'DND5E.NoSpellLevels'}}</li>
+      <li class="items-footer">
+        <a class="item-create" title="{{localize 'DND5E.SpellCreate'}}" data-type="spell"
+        data-level="{{lvl}}"><i class="fas fa-plus-circle"></i></a>
+      </li>
+    </ul>
+    {{/if}}
+    {{/if}}
+    {{/each}}
+  </ul>
+</div>
+
+{{!-- Spellbook Footer --}}
+{{> "modules/tidy5e-sheet/templates/actors/parts/tidy5e-spellbook-footer.html"}}
